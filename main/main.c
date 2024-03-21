@@ -29,9 +29,9 @@ static const char *TAG = "esp32_c6";
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
 */
-#define BLINK_GPIO 15
+#define BLINK_GPIO CONFIG_BLINK_GPIO
 
-#define BUTTON_GPIO 9
+#define BUTTON_GPIO CONFIG_BUTTON_GPIO
 
 typedef enum
 {
@@ -41,8 +41,6 @@ typedef enum
 } led_state;
 
 #define NUM_STATES 3
-
-static SemaphoreHandle_t state_mutex;
 
 static led_state STATE = ORDINARY;
 
